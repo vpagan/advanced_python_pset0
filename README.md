@@ -2,11 +2,11 @@
 
 Replace these with your own build badges!
 
-[![Build Status](https://travis-ci.com/csci-e-29-dev/pset-0-starter.svg?token=aaaaa&branch=master)](https://travis-ci.com/csci-e-29-dev/pset-0-starter)
+[![Build Status](https://travis-ci.com/vpagan/advanced_python_pset0.svg?branch=master)](https://travis-ci.com/vpagan/advanced_python_pset0.svg?branch=master)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/aaaaa/maintainability)](https://codeclimate.com/repos/aaaaa/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/e1d1e76bf01bacf3e2cc/maintainability)](https://codeclimate.com/github/vpagan/advanced_python_pset0/maintainability)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/aaaaa/test_coverage)](https://codeclimate.com/repos/aaaaa/test_coverage)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/e1d1e76bf01bacf3e2cc/test_coverage)](https://codeclimate.com/github/vpagan/advanced_python_pset0/test_coverage)
 
 ## Objectives
 
