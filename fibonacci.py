@@ -23,11 +23,20 @@ def optimized_fibonacci(n):
 
 
 class SummableSequence(object):
-    def __init__(self, *initial):
-        raise NotImplementedError()
+    def __init__(self, *initial):  # [5, 7, 11]
+        self.initial = list(initial)
 
-    def __call__(self, i):
-        raise NotImplementedError()
+    def __call__(self, i):  # 2, 7
+        n = len(self.initial)
+        if n > i:
+            return self.initial[i]
+        nums = self.initial[:]
+        for i in range(n, i + 1):
+            nums.append(sum(nums))
+            nums.pop(0)
+        return nums[-1]
+
+
 
 
 if __name__ == "__main__":
