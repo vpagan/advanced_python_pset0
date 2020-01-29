@@ -17,7 +17,28 @@ def print_pyramid(rows):
 
     :param int rows: total height
     """
-    raise NotImplementedError("Called with rows={}".format(rows))
+    """
+    rows  width    stones   air
+    1       1       1       subtract and divide
+    2       3       3
+    3       5       5
+    4       7       7
+    n       2n-1    2n-1
+
+    1 --=--
+    2 -===-
+    3 =====
+
+    :param rows:
+    :return:
+    """
+    width = 2*rows-1
+
+    for n in range(1, rows +1):
+        stones = 2*n-1
+        air = (width - stones) // 2
+        print("-"*air + "="*stones + "-"*air)
+
 
 
 if __name__ == "__main__":
