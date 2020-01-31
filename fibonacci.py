@@ -12,6 +12,22 @@ def last_8(some_int):
 
 
 def optimized_fibonacci(n):
+    """
+    Optimized fibonacci returns nth fibonacci value
+    :param n: integer, index of fibonacci number.
+    :return: integer, fibonacci number at index n.
+    """
+    if n is None or type(n) == float:
+        raise TypeError("Input cannot be a float or None")
+
+    try:
+        n = int(n)
+    except ValueError:
+        raise ValueError("The input must be a non-negative integer")
+
+    if n < 0:
+        raise ValueError("The input must be a non-negative integer")
+
     if n == 0:
         return 0
     if n == 1:

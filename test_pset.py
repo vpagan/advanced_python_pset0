@@ -72,6 +72,18 @@ class FibTests(TestCase):
             with timeout(message="Timeout running f({})".format(n)):
                 self.assertEqual(ss(n), optimized_fibonacci(n))
 
+    def test_fibonacci_index(self):
+        with self.assertRaises(ValueError):
+            optimized_fibonacci(-1)
+
+    def test_fibonacci_integer(self):
+        with self.assertRaises(TypeError):
+            optimized_fibonacci(None)
+        with self.assertRaises(ValueError):
+            optimized_fibonacci("ABCD")
+        with self.assertRaises(TypeError):
+            optimized_fibonacci(1.5)
+
 class TestTimeout(TestCase):
     def test_timeout(self):
         with self.assertRaises(TimeoutError):
