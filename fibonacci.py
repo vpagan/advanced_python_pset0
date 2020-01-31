@@ -40,7 +40,23 @@ def optimized_fibonacci(n):
 
 class SummableSequence(object):
     def __init__(self, *initial):  # [5, 7, 11]
-        self.initial = list(initial)
+        """
+        initial values attached to the object
+        :param initial:
+        """
+        initial = list(initial)
+
+        for n in initial:
+            if n is None or type(n) == float:
+                raise TypeError("Input cannot be a float or None")
+            try:
+                n = int(n)
+            except ValueError:
+                raise ValueError("The input must be a non-negative integer")
+            if n < 0:
+                raise ValueError("The input must be a non-negative integer")
+
+        self.initial = initial
 
     def __call__(self, i):  # 2, 7
         n = len(self.initial)

@@ -72,6 +72,15 @@ class FibTests(TestCase):
             with timeout(message="Timeout running f({})".format(n)):
                 self.assertEqual(ss(n), optimized_fibonacci(n))
 
+    def test_summable_input(self):
+        with self.assertRaises(TypeError):
+            SummableSequence(None)
+        with self.assertRaises(ValueError):
+            SummableSequence("ABCD")
+        with self.assertRaises(TypeError):
+            SummableSequence(1.5)
+
+
     def test_fibonacci_index(self):
         with self.assertRaises(ValueError):
             optimized_fibonacci(-1)
