@@ -12,10 +12,13 @@ try:
     # Absent on Windows, trigger AttributeError
     signal.alarm
 
+
     def _timeout(signum, frame):
         raise TimeoutError()
 
+
     signal.signal(signal.SIGALRM, _timeout)
+
 
     @contextmanager
     def timeout(seconds=1, message="Timeout!"):
@@ -121,6 +124,17 @@ class PyramidTests(TestCase):
 
     def test_pyramid_two(self):
         self._assert_expected(2, "-=-\n" + "===\n")
+
+    def test_pyramid_three(self):
+        self._assert_expected(3, "--=--\n" + "-===-\n" + "=====\n")
+
+    def test_input(self):
+        with self.assertRaises(TypeError):
+            print_pyramid(None)
+        with self.assertRaises(ValueError):
+            print_pyramid("ABCD")
+        with self.assertRaises(TypeError):
+            print_pyramid(1.5)
 
 
 if __name__ == "__main__":

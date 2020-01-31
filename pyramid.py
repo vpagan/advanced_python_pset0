@@ -32,6 +32,17 @@ def print_pyramid(rows):
     :param rows:
     :return:
     """
+    if rows is None or type(rows) == float:
+        raise TypeError("Input cannot be a float or None")
+
+    try:
+        rows = int(rows)
+    except ValueError:
+        raise ValueError("The input must be a non-negative integer")
+
+    if rows < 0:
+        raise ValueError("The input must be a non-negative integer")
+
     width = 2*rows-1
 
     for n in range(1, rows +1):
