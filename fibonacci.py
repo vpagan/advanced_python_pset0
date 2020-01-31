@@ -39,6 +39,9 @@ def optimized_fibonacci(n):
 
 
 class SummableSequence(object):
+    """
+    fibonacci like sequence builder with variable length
+    """
     def __init__(self, *initial):  # [5, 7, 11]
         """
         initial values attached to the object
@@ -59,6 +62,11 @@ class SummableSequence(object):
         self.initial = initial
 
     def __call__(self, i):  # 2, 7
+        """
+        sums last i number of integers
+        :param i: integer, index of the number in sequence
+        :return: integer, value of number at index i.
+        """
         n = len(self.initial)
         if n > i:
             return self.initial[i]
