@@ -1,5 +1,14 @@
 #!/usr/bin/env python3
 
+def check_input_type(n):
+    if n is None or type(n) == float:
+        raise TypeError("Input cannot be a float or None")
+    try:
+        n = int(n)
+    except ValueError:
+        raise ValueError("The input must be a non-negative integer")
+    return n
+
 
 def last_8(some_int):
     """Return the last 8 digits of an int
@@ -17,13 +26,7 @@ def optimized_fibonacci(n):
     :param n: integer, index of fibonacci number.
     :return: integer, fibonacci number at index n.
     """
-    if n is None or type(n) == float:
-        raise TypeError("Input cannot be a float or None")
-
-    try:
-        n = int(n)
-    except ValueError:
-        raise ValueError("The input must be a non-negative integer")
+    n = check_input_type(n)
 
     if n < 0:
         raise ValueError("The input must be a non-negative integer")
@@ -50,12 +53,7 @@ class SummableSequence(object):
         initial = list(initial)
 
         for n in initial:
-            if n is None or type(n) == float:
-                raise TypeError("Input cannot be a float or None")
-            try:
-                n = int(n)
-            except ValueError:
-                raise ValueError("The input must be a non-negative integer")
+            n = check_input_type(n)
             if n < 0:
                 raise ValueError("The input must be a non-negative integer")
 

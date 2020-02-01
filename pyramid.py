@@ -10,6 +10,7 @@ A pyramid of height 3 would look like:
 """
 
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
+from fibonacci import check_input_type
 
 
 def print_pyramid(rows):
@@ -32,14 +33,7 @@ def print_pyramid(rows):
     :param rows:
     :return:
     """
-    if rows is None or type(rows) == float:
-        raise TypeError("Input cannot be a float or None")
-
-    try:
-        rows = int(rows)
-    except ValueError:
-        raise ValueError("The input must be a non-negative integer")
-
+    rows = check_input_type(rows)
     if rows <= 0:
         raise ValueError("The input must be a non-negative integer")
 
