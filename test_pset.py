@@ -119,6 +119,10 @@ class PyramidTests(TestCase):
 
         self.assertEqual(expected, captured)
 
+    def test_pyramid_zero(self):
+        with self.assertRaises(ValueError):
+            print_pyramid(0)
+
     def test_pyramid_one(self):
         self._assert_expected(1, "=\n")
 

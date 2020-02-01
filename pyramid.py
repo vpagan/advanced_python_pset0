@@ -40,7 +40,7 @@ def print_pyramid(rows):
     except ValueError:
         raise ValueError("The input must be a non-negative integer")
 
-    if rows < 0:
+    if rows <= 0:
         raise ValueError("The input must be a non-negative integer")
 
     width = 2*rows-1
@@ -49,7 +49,6 @@ def print_pyramid(rows):
         stones = 2*n-1
         air = (width - stones) // 2
         print("-"*air + "="*stones + "-"*air)
-
 
 
 if __name__ == "__main__":
