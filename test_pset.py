@@ -80,8 +80,11 @@ class FibTests(TestCase):
             SummableSequence(None)
         with self.assertRaises(ValueError):
             SummableSequence("ABCD")
+        with self.assertRaises(ValueError):
+            SummableSequence(-1)
         with self.assertRaises(TypeError):
             SummableSequence(1.5)
+
 
 
     def test_fibonacci_index(self):

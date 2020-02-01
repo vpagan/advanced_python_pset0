@@ -50,7 +50,5 @@ if __name__ == "__main__":
         description=__doc__, formatter_class=RawDescriptionHelpFormatter
     )
     parser.add_argument("-r", "--rows", default=10, type=int, help="Number of rows")
-
-    args = parser.parse_args()
-    print_pyramid(args.rows)
-    print('test again')
+    print_pyramid(parser.parse_args().rows)
+    # print('test again')
